@@ -1,6 +1,5 @@
 ## The Real Midterm Test
-You don't have to install all package + dependencies just don't forget to 
-``` npm install ```
+You don't have to install all package + dependencies just don't forget to ``` npm install ``` after git pull origin main
 
 ## Install package + dependencies
 - npm install -g typescript
