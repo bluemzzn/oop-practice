@@ -41,16 +41,17 @@ export async function getPostPopularity(): Promise<PostScore[]> {
             sum[count.postId] = (sum[count.postId] || 0) + 1
             return sum;
         }, {} as Record<number, number>);
-        
-        const countScore = (posts.body.length * 2) + (commentCount * 10);
-        const filterPost = posts.filter(post => {
-            if(countScore <= 300){
-                return [];
-            }});
 
-            
+        return posts.map(post => {
+            const cCount = commentCount[post.id] || 0; 
+            const score = (post.body.length * 2) + (cCount * 10); 
 
-        return filterPost.sort().map(post => ({ postId : post.userId, title : post.title, score : countScore }))
+            return {
+                postId: post.id, // ใช้ post.id นะครับ
+                title: post.title,
+                score: score
+            };
+        });
     } catch (error) {
         return [];
     }
