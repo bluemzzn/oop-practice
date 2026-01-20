@@ -6,9 +6,12 @@ You don't have to install all package + dependencies just don't forget to ``` np
 - npm install -g ts-node
 - npm install axios 
 - npx tsc --init
+- npm install typescript @types/node
 
 ### tsconfig.json
 - "module" : "CommonJS",
 - "moduleResolution": "Node"
 - "resolveJsonModule": true
+
+
 
