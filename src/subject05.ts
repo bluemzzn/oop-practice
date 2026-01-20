@@ -29,16 +29,16 @@ interface UserAddress {
     fullAddress: string;
 }
 
-export async function getUserAddress(): Promise<UserAddress[]> {
+export async function getUserAddresses(): Promise<UserAddress[]> {
     try {
         const res = await axios.get<User[]>("https://jsonplaceholder.typicode.com/users");
         const userdata = res.data;
         // u don't have to create more variable just use template literal in map function instead.
-        return userdata.map(user => ({ id: user.id, name: user.name, fullAddress: `${user.address.street}, ${user.address.suite}, ${user.address.city}, ${user.address.zipcode}` }));
+        return userdata.map(user => ({ id: user.id, name: user.name, fullAddress: `${user.address.street}, ${user.address.suite}, ${user.address.city} (${user.address.zipcode})` }));
     }
     catch (error) {
         return [];
     }
 }
 
-getUserAddress().then(check => console.log(check));
+getUserAddresses().then(check => console.log(check));
