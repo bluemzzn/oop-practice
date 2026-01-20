@@ -13,5 +13,7 @@ You don't have to install all package + dependencies just don't forget to ``` np
 - "moduleResolution": "Node"
 - "resolveJsonModule": true
 
+## notion link
 
+https://www.notion.so/OOP-Noting-2ee9c962006680ab802de0f42d475a5b
 
